@@ -1,0 +1,49 @@
+html,body{
+    width:100%;
+    height:100%;
+}
+
+#app{
+    width:100%;
+    height:100%;
+    #fun-head{
+       width:1200px;
+       height:64px;
+       margin: 0 auto;
+       border-bottom:1px solid #ccc;
+       .head-logo{
+           float:left;
+           a{
+               display:inline-block;
+               width:300px;
+               height:64px;
+               background:url('../image/logo.png') no-repeat;
+            }
+       }
+       .head-tab{
+           width:600px;
+           margin-left:200px;
+           float:left;
+           a{
+               float:left;
+               display:block;
+               width:100px;
+               font-size:16px;
+               height:63px;
+               color:#108ee9;
+               &.active{
+                   border-bottom: 2px solid #108ee9;
+                   color:#f2bd00
+               }
+               &:hover{
+                   color:#f2bd00
+               }
+               li{
+                   line-height:64px;
+                   text-align: center;
+               }
+            }
+           
+        }
+    }
+}
