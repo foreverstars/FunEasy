@@ -6,7 +6,7 @@ import HomeNews from "../components/home/HomeNews"
 import HomeMusics from "../components/home/HomeMusics"
 import HomeBooks from "../components/home/HomeBooks"
 
-import CommonDataStore from "../../store/CommonDataStore"
+import CommonDataStore from "../store/CommonDataStore"
 
 export default class Home extends Component{
     render(){

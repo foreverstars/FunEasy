@@ -10,16 +10,16 @@ class CommonDataStore {
            HotMusicsData:[],
            HotBooksData:[]
         })
-    },
+    }
     getHotMoviesData(){
         
-    },
+    }
     getHotNewsData(){
         
-    },
+    }
     getHotMusicsData(){
         
-    },
+    }
     getHotBooksData(){
         
     }
