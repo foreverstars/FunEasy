@@ -26,6 +26,19 @@ module.exports = {
 				loader: "file-loader"
 			}
 		]
-	}
+	},
+	devServer: {
+        historyApiFallback: true,
+          hot: true,
+        inline: true,
+        stats: { colors: true },
+        proxy: {
+            '/v2': {
+              target: 'https://api.douban.com',
+              pathRewrite: {'^/' : '/'},
+              changeOrigin: true
+            }
+         }
+    }
 }
 	
