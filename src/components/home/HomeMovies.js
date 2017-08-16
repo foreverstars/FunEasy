@@ -15,7 +15,10 @@ class HomeMovies extends Component{
                 <ul>
                 {
                     store.HotMoviesData.map((item,index)=>{
-                        return ( <li key={index}><img src={item.images.large}/></li> )
+                        return ( <li key={index}>
+                                   <img src={item.images.large}/>
+                                    <h4>{item.title}</h4>
+                                </li> )
                     })
                 }
                 </ul>
@@ -27,7 +30,7 @@ class HomeMovies extends Component{
        
         return (
             <div className="home-movies">
-                <h4>热门电影</h4>
+                <h3>热门电影</h3>
                {this._renderHotMovieList()}
             </div>
         )
