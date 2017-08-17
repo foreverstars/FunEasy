@@ -29,7 +29,7 @@ class HomeMovies extends Component{
     render(){
        
         return (
-            <div className="home-movies">
+            <div className="mythink-home-movies">
                 <h3>热门电影</h3>
                {this._renderHotMovieList()}
             </div>

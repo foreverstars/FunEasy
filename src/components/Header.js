@@ -17,11 +17,11 @@ export default class Header extends Component{
     }
     render(){
         return(
-            <div id="fun-head">
-                <div className="head-logo">
+            <div id="mythink-fun-head">
+                <div className="mythink-head-logo">
                     <a href="/"></a>
                 </div>
-                <ul className="head-tab">
+                <ul className="mythink-head-tab">
                      {
                         this.state.tabList.map((item,index)=>{
                           return  (

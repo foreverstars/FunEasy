@@ -6,7 +6,7 @@ export default class App extends Component{
         return (
             <div id="app">
                 <Header />
-                <div id="fun-content">
+                <div id="mythink-fun-content">
                     {this.props.children}
                 </div>
             </div>

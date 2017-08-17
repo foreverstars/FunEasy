@@ -8,7 +8,7 @@ export default class SwiperItem extends Component{
         const {item , count} = this.props;
         const width = 100 / count + "%";
         return (
-            <div className="swiper-item" style={{width : width}}>
+            <div className="mythink-swiper-item" style={{width : width}}>
                <img src={item.src} />
             </div>
         )

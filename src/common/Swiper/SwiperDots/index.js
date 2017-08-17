@@ -17,13 +17,13 @@ export default class SliderDots extends Component {
       dotNodes[i] = (
         <span
           key={'dot' + i}
-          className={"swiper-dot" + (i === this.props.nowLocal?" swiper-dot-selected":"")}
+          className={"mythink-swiper-dot" + (i === this.props.nowLocal?" swiper-dot-selected":"")}
           onClick={this.handleDotClick.bind(this, i)}>
         </span>
       )
     }
     return (
-      <div className="swiper-dots-wrap">
+      <div className="mythink-swiper-dots-wrap">
         {dotNodes}
       </div>
     );

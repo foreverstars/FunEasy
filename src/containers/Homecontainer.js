@@ -11,7 +11,7 @@ import CommonDataStore from "../store/CommonDataStore"
 export default class Home extends Component{
     render(){
         return (
-            <div id="home-content">
+            <div id="mythink-home-content">
                 <HomeBanner store={CommonDataStore}/>
                 <HomeMovies store={CommonDataStore}/>
                 <HomeNews   store={CommonDataStore}/>

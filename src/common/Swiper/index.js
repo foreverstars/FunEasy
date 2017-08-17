@@ -76,7 +76,7 @@ export default React.createClass({
         const dotsNode = <SwiperDots turn={this.turn} count={this.props.items.length} nowLocal={this.state.nowLocal} />
         return(
           <div
-              className="swiper"
+              className="mythink-swiper"
               onMouseOver={this.props.pause?this.pausePlay:null} 
               onMouseOut={this.props.pause?this.goPlay:null}>
             <ul style={{
