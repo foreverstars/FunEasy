@@ -1,8 +1,13 @@
+*{
+    box-sizing: content-box;
+}
 html,body{
     width:100%;
     height:100%;
 }
-
+ul,li{
+    list-style:none
+}
 #app{
     width:100%;
     height:100%;
@@ -97,6 +102,8 @@ html,body{
               color: orangered;
               line-height: 40px;
               font-weight: bold;
+              border-bottom:1px solid #ccc;
+              margin-bottom:10px;
             }
             .mythink-home-news-content{
                   margin-left:10px;
@@ -104,7 +111,6 @@ html,body{
                   overflow:hidden;
                   float:left;
               .ant-carousel .slick-slide{
-                 
                   width:300px;
                   float:left;
                   height:400px;
