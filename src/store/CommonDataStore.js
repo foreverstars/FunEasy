@@ -13,15 +13,21 @@ class CommonDataStore {
         })
     }
     getHotMoviesData(){
-      fetch(UrlConfig.getHotMoviesData)
+      fetch(UrlConfig.getHotMoviesData+"?start=0&count=5")
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
         this.HotMoviesData = data.subjects
       })
     }
-    getHotNewsData(){
-        
+    getHotNewsData(type){
+       const parmas = "?action=getnews&type=" + type + "&count=5"
+       fetch(UrlConfig.getHotNewsData + parmas)
+       .then((response)=> {
+         return response.json()
+       }).then( (data)=> {
+          this.HotNewsData = data 
+       })
     }
     getHotMusicsData(){
         

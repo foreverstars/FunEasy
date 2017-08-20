@@ -1,5 +1,6 @@
 import React,{ Component } from "react"
 import {observer} from "mobx-react"
+import {toJS} from "mobx"
 
 class HomeMovies extends Component{
     constructor(){
@@ -10,11 +11,12 @@ class HomeMovies extends Component{
     }
     _renderHotMovieList(){
         const {store} = this.props
-        if(store.HotMoviesData.length){
+        const data = toJS(store.HotMoviesData) || []
+        if(data.length){
             return (
                 <ul>
                 {
-                    store.HotMoviesData.map((item,index)=>{
+                    data.map((item,index)=>{
                         return ( <li key={index}>
                                    <img src={item.images.large}/>
                                     <h4>{item.title}</h4>
