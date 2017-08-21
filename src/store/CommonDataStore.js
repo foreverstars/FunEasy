@@ -46,7 +46,8 @@ class CommonDataStore {
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
-        this.HotMusicsData = data 
+        this.HotMusicsData = data.song_list
+        
       }) 
     }
     getPopularMusicsData(){
@@ -55,11 +56,22 @@ class CommonDataStore {
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
-       this.getPopularMusicsData = data
+       this.getPopularMusicsData = data.song_list
+       
       })  
     }
     getHotBooksData(){
         
+    }
+    play(id,cb){
+      const params = "?method=baidu.ting.song.playAAC&songid=" + id
+      fetch(UrlConfig.getHotMusicsData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+          this.fileLink = data.bitrate.file_link
+          cb()
+      })  
     }
 }
 
