@@ -37,6 +37,11 @@ module.exports = {
               target: 'https://api.douban.com',
               pathRewrite: {'^/' : '/'},
               changeOrigin: true
+			},
+			 '/v1': {
+              target: 'http://tingapi.ting.baidu.com/',
+              pathRewrite: {'^/' : '/'},
+              changeOrigin: true
             }
          }
     }

@@ -8,23 +8,55 @@ class CommonDataStore {
        extendObservable(this, {
            HotMoviesData:[],
            HotNewsData:[],
+           HotNewsHotData:[],
            HotMusicsData:[],
+           PopularMusicData:[],
            HotBooksData:[]
         })
     }
     getHotMoviesData(){
-      fetch(UrlConfig.getHotMoviesData)
+      fetch(UrlConfig.getHotMoviesData + "?start=0&count=5")
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
         this.HotMoviesData = data.subjects
       })
     }
-    getHotNewsData(){
-        
+    getHotNewsData(type){
+      const params = "?action=getnews&type=" + type + "&count=5"
+      fetch(UrlConfig.getHotNewsData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+        this.HotNewsData = data
+      })
+    }
+   getHotNewsHotData(){
+      const params = "?action=getnews&type=top&count=10"
+      fetch(UrlConfig.getHotNewsData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+        this.HotNewsHotData = data
+      })
     }
     getHotMusicsData(){
-        
+      const params = "?method=baidu.ting.billboard.billList&type=2&size=8&offset=0"
+      fetch(UrlConfig.getHotMusicsData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+        this.HotMusicsData = data 
+      }) 
+    }
+    getPopularMusicsData(){
+      const params = "?method=baidu.ting.billboard.billList&type=1&size=10&offset=0"
+      fetch(UrlConfig.getHotMusicsData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+       this.getPopularMusicsData = data
+      })  
     }
     getHotBooksData(){
         

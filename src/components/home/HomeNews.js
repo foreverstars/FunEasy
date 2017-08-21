@@ -9,8 +9,8 @@ export default class Home extends Component{
                  <h3>热点新闻</h3>
                  <div className="mythink-home-news-content">
                    <HomeNewsBanner />
-                   <HomeNewsSilde />
-                   <HomeNewsHot />
+                   <HomeNewsSilde {...this.props}/>
+                   <HomeNewsHot {...this.props} />
                  </div>
             </div>
         ) 
