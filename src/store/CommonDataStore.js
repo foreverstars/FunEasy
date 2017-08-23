@@ -1,6 +1,5 @@
-import { extendObservable, action } from "mobx"
+import { extendObservable, action, toJS } from "mobx"
 import  "whatwg-fetch"
-
 import UrlConfig from "../config/urlConfig"
 
 class CommonDataStore {
@@ -46,8 +45,11 @@ class CommonDataStore {
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
-        this.HotMusicsData = data.song_list
-        
+        const Newdata =  data.song_list
+        Newdata.map((item,index)=>{
+            item.isLeftPlaying = false
+        })
+        this.HotMusicsData = Newdata
       }) 
     }
     getPopularMusicsData(){
@@ -65,6 +67,10 @@ class CommonDataStore {
     }
     play(id,cb){
       const params = "?method=baidu.ting.song.playAAC&songid=" + id
+      const data = Object.assign([],toJS(this.HotMusicsData))
+      let localItem = data.find( v => v.song_id === id)
+      localItem.isLeftPlaying = !localItem.isLeftPlaying
+      this.HotMusicsData = data 
       fetch(UrlConfig.getHotMusicsData + params)
       .then((response)=> {
         return response.json()
@@ -72,6 +78,13 @@ class CommonDataStore {
           this.fileLink = data.bitrate.file_link
           cb()
       })  
+    }
+
+    pause(id){
+      const data = Object.assign([],toJS(this.HotMusicsData))
+      let localItem = data.find( v => v.song_id === id)
+      localItem.isLeftPlaying = !localItem.isLeftPlaying
+      this.HotMusicsData = data  
     }
 }
 
