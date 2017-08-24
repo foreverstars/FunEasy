@@ -9,7 +9,7 @@ class CommonDataStore {
            HotNewsData:[],
            HotNewsHotData:[],
            HotMusicsData:[],
-           PopularMusicData:[],
+           PopularMusicsData:[],
            HotBooksData:[]
         })
     }
@@ -53,24 +53,27 @@ class CommonDataStore {
       }) 
     }
     getPopularMusicsData(){
+      console.log(UrlConfig.getHotMusicsData )
       const params = "?method=baidu.ting.billboard.billList&type=1&size=10&offset=0"
       fetch(UrlConfig.getHotMusicsData + params)
       .then((response)=> {
         return response.json()
       }).then( (data)=> {
-       this.getPopularMusicsData = data.song_list
+       this.PopularMusicsData = data.song_list
        
       })  
     }
     getHotBooksData(){
-        
+      const params = "?q=" + "侦探" + "&start=0&count=9"
+      fetch(UrlConfig.getHotBooksData + params)
+      .then((response)=> {
+        return response.json()
+      }).then( (data)=> {
+         this.HotBooksData = data.books
+      })  
     }
     play(id,cb){
       const params = "?method=baidu.ting.song.playAAC&songid=" + id
-      const data = Object.assign([],toJS(this.HotMusicsData))
-      let localItem = data.find( v => v.song_id === id)
-      localItem.isLeftPlaying = !localItem.isLeftPlaying
-      this.HotMusicsData = data 
       fetch(UrlConfig.getHotMusicsData + params)
       .then((response)=> {
         return response.json()
@@ -78,13 +81,6 @@ class CommonDataStore {
           this.fileLink = data.bitrate.file_link
           cb()
       })  
-    }
-
-    pause(id){
-      const data = Object.assign([],toJS(this.HotMusicsData))
-      let localItem = data.find( v => v.song_id === id)
-      localItem.isLeftPlaying = !localItem.isLeftPlaying
-      this.HotMusicsData = data  
     }
 }
 

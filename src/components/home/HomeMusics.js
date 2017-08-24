@@ -6,7 +6,7 @@ class HomeMusic extends Component{
         super()
         this.state = {
             fileLink : '',
-            isLeftPlaying: false
+            isLeftPlayingIndex: -1
         }
     }
     componentWillMount(){
@@ -14,19 +14,20 @@ class HomeMusic extends Component{
         store.getHotMusicsData()
         store.getPopularMusicsData()
     }
-    _play(item){
+    _play(item,index,type){
       const audio = this.refs.audio
-      if(!item.isLeftPlaying){
-        this.props.store.play(item.song_id,()=>{
+      if( audio.paused){
+            this.setState({ isLeftPlayingIndex : index  })
+            this.props.store.play(item.song_id,()=>{
             this.setState({fileLink : this.props.store.fileLink},()=>{
                audio.play()
             })
         })
       }      
       else{
-        this.props.store.pause(item.song_id)
         audio.pause()
-      }
+        this.setState({ isLeftPlayingIndex : -1})
+       }
     }
     render(){
         const { store } = this.props
@@ -41,18 +42,20 @@ class HomeMusic extends Component{
                                 HotMusicsData.map((item,index)=>{
                                     return (<li  key={index}>
                                                 <img src={item.pic_big}/><p>{item.title}</p>
-                                                <a onClick={this._play.bind(this,item)} className={item.isLeftPlaying ? "pause-icon" :"play-icon"} title="播放" href="javascript:;"></a>
+                                                <a onClick={this._play.bind(this,item,index,'left')} className={ this.state.currentLeftPlaying && (this.state.isLeftPlayingIndex === index)  ? "pause-icon" :"play-icon"} title="播放" href="javascript:;"></a>
                                            </li>)
                                 })
                             }
                          </ul>
-                        <ul className="home-music-content">
+                        <ul className="home-music-right">
+                            <h4>新歌榜</h4>
                             {
                                 PopularMusicsData.map((item,index)=>{
                                     return (<li key={index}>
-                                               <span>{item.title}</span><a title="播放" href="javascript:;"></a>
+                                               <span>{index+1}.</span>
+                                               <span>{item.title}</span>
+                                               <a href="javascript:;" className="play-icon"  title="播放"></a>
                                            </li>)    
-
                                 })
                             }
                          </ul>
