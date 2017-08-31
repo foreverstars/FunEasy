@@ -12,12 +12,13 @@ class HomeBook extends Component{
     
     _format(){
         const {store} = this.props
-        const HomeBooKData = toJS(store.HotBooksData) || []
-        return HomeBooKData.map( (item)=>{
-            const x = {...item}
+        const HomeBookData = toJS(store.HotBooksData) || []
+        return HomeBookData.map( (item , index)=>{
+            const x = Object.assign({},item)    
             x.average = item.rating.average ?  item.rating.average : '8.0'
             x.author = item.author.join('、')
-            x.desc = item.summary 
+            x.desc = item.summary ? item.summary :  '一切尽在不言中'
+            return x
         })
     }
     

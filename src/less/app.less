@@ -60,6 +60,7 @@ ul,li{
        margin-top: 20px;
        padding:10px;
        border:1px solid #ddd;
+       margin-bottom:20px;
        #mythink-home-content{
          #mythink-home-banner{
               width:100%;
@@ -276,9 +277,7 @@ ul,li{
         .home-book{
             margin-top:10px;
             padding-bottom:20px;
-            border-bottom:1px solid #ccc;
-            height:440px;
-            h3{
+           h3{
               color: orangered;
               line-height: 40px;
               font-weight: bold;
@@ -292,9 +291,59 @@ ul,li{
                     width:33%;
                     height:190px;
                     float:left;
-                    
+                    img{
+                        display: inline-block;
+                        width:70px;
+                        height:100px;
+                        vertical-align: top;
+                        border:1px solid #ccc;
+                    }
+                    .home-book-introduce{
+                        display: inline-block;
+                        width:300px;
+                        height:100px;
+                        vertical-align: top;
+                        margin-left:10px;
+                        h5{
+                            line-height: 20px;
+                            font-size:15px;
+                            color:#108ee9
+                        }
+                        p{
+                            line-height: 18px;
+                            font-size:13px;
+                        }
+                    }
+                    .home-book-desc{
+                        margin-top:10px;
+                        margin-left:10px;
+                        width:70%;
+                        height:45px;
+                        line-height: 15px;
+                        overflow : hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                    }   
                 }
-            }
+            }   
         }
+        &:hover{
+            box-shadow: 2px 2px 3px  #aaaaaa;
+        }
+    }
+}
+.load-icon{
+    width:100%;
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        display: block;
+        width:120px;
+        height:80px;
+        align-self: center;
     }
 }

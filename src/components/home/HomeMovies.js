@@ -12,21 +12,21 @@ class HomeMovies extends Component{
     _renderHotMovieList(){
         const {store} = this.props
         const data = toJS(store.HotMoviesData) || []
-        if(data.length){
-            return (
+         return ( 
                 <ul>
                 {
-                    data.map((item,index)=>{
+                    data.length ? data.map((item,index)=>{
                         return ( <li key={index}>
                                    <img src={item.images.large}/>
                                     <h4>{item.title}</h4>
                                 </li> )
-                    })
+                    }) :  <div className="load-icon">
+                            <img src="./src/image/load.gif"/>
+                        </div>
                 }
                 </ul>
             )
-        }
-        return <p>暂无数据</p>
+       
     }
     render(){
        
