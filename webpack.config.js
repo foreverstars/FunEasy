@@ -15,13 +15,35 @@ module.exports = {
 				}
 			},
 			{
+                test :  /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+			{
 				test :  /\.less$/,
-				loader: "style-loader!less-loader"
-			},{
-				test : /\.(png|jpg|gif|ttf)$/,
-				loader: "file-loader"
-			}
+				loader: "style-loader!css-loader!less-loader"
+			}, {
+				test: /\.(png|jpg)$/,
+				loader: 'url-loader?limit=8192'
+     		}
 		]
-	}
+	},
+	devServer: {
+        historyApiFallback: true,
+          hot: true,
+        inline: true,
+        stats: { colors: true },
+        proxy: {
+            '/v2': {
+              target: 'https://api.douban.com',
+              pathRewrite: {'^/' : '/'},
+              changeOrigin: true
+			},
+			 '/v1': {
+              target: 'http://tingapi.ting.baidu.com/',
+              pathRewrite: {'^/' : '/'},
+              changeOrigin: true
+            }
+         }
+    }
 }
 	

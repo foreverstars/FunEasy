@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.mythink-swiper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  &>ul {
+    height: auto;
+    position: relative;
+    left: 0;
+    transition: all 1s;
+  }
+
+  .mythink-swiper-item {
+    float:left;
+    height: auto;
+
+    &>img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .mythink-swiper-arrow {
+    display:block;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 100;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: rgba(0,0,0,.2);
+    }
+
+    &.swiper-arrow-right {
+      right: 0;
+    }
+    &.swiper-arrow-left {
+      left: 0;
+    }
+  }
+
+  .mythink-swiper-dots-wrap {
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .mythink-swiper-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: 3px solid #ccc;
+      margin: 6px;
+      cursor: pointer;
+      border-radius: 20px;
+
+      &:hover {
+        border: 3px solid #868686;
+      }
+
+      &.swiper-dot-selected {
+        background: #ccc;
+      }
+    }
+  }
+}
