@@ -53,7 +53,7 @@ class CommonDataStore {
       }) 
     }
     getPopularMusicsData(){
-      console.log(UrlConfig.getHotMusicsData )
+      
       const params = "?method=baidu.ting.billboard.billList&type=1&size=10&offset=0"
       fetch(UrlConfig.getHotMusicsData + params)
       .then((response)=> {

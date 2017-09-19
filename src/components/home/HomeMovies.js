@@ -1,6 +1,7 @@
 import React,{ Component } from "react"
 import {observer} from "mobx-react"
 import {toJS} from "mobx"
+import {Link} from "react-router"
 
 class HomeMovies extends Component{
     constructor(){
@@ -16,10 +17,14 @@ class HomeMovies extends Component{
                 <ul>
                 {
                     data.length ? data.map((item,index)=>{
-                        return ( <li key={index}>
+                        const path  = "/movie/detail/" + item.id
+                        return ( 
+                            <Link to={path} key={index}>                                
+                                <li >
                                    <img src={item.images.large}/>
                                     <h4>{item.title}</h4>
-                                </li> )
+                                </li>
+                            </Link> )
                     }) :  <div className="load-icon">
                             <img src="./src/image/load.gif"/>
                         </div>

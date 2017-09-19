@@ -5,7 +5,9 @@ export default {
     getHotBooksData :  "v2/book/search",                               //获取热门书籍
     getSoonMovieData : "v2/movie/coming_soon",
     getTopMovieData :   "v2/movie/top250",
-    getNorthMovieData : "v2/movie/us_box"
+    getNorthMovieData : "v2/movie/us_box",
+    getMusicList: "v2/music/search",                                 //获取音乐列表
+    getMovieDetail: "v2/movie/subject"                               //获取电影详情
 }
 //
 //获取新闻列表 `http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${opt.type}&count=${opt.count}`

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import {Icon} from "antd"
+import {Link} from "react-router"
 export default class MovieList extends Component{
     constructor(props){
         super(props)
@@ -21,8 +22,10 @@ export default class MovieList extends Component{
                             const src = item.images ? item.images.large : item.subject.images.large
                             const title = item.title ? item.title : item.subject.title
                             const desc = item.title ? item.rating.average || item.genres[0] : item.subject.rating.average || item.subject.genres[0]
+                            const path= "/movie/detail/" + item.id
                             return (
-                                <li key={index}>
+                                <Link to={path} key={index}>
+                                <li >
                                     <img src={src} />
                                     <div>
                                         <h3>{title}</h3>
@@ -30,6 +33,7 @@ export default class MovieList extends Component{
                                     </div>
                                     
                                 </li>
+                                </Link>
                             )
                         }) :  
                         <div className="load-icon">

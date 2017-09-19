@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "天坑求大神带",
+        "imgUrl" : "./src/image/comment1.jpg",
+        "comment" : "电影不错,电影院看的贼带劲"
+    },
+    {
+        "name" : "猥琐强不能省啊",
+        "imgUrl" : "./src/image/comment2.jpg",
+        "comment" : "不咋的,剧情一般"
+    },
+    {
+        "name" : "确认123",
+        "imgUrl" : "./src/image/comment3.jpg",
+        "comment" : "一般一般,剧情很搞笑"
+    },
+    {
+        "name" : "心若冰心",
+        "imgUrl" : "./src/image/comment4.jpg",
+        "comment" : "还可以吧"
+    },
+    {
+        "name" : "萎黄345",
+        "imgUrl" : "./src/image/comment5.jpg",
+        "comment" : "很好看,贼刺激"
+    }
+]
