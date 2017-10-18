@@ -13,7 +13,6 @@ class CommonDataStore {
            HotBooksData:[]
         })
     }
-    
     getHotMoviesData(){
       fetch(UrlConfig.getHotMoviesData + "?start=0&count=5")
       .then((response)=> {
@@ -22,7 +21,6 @@ class CommonDataStore {
         this.HotMoviesData = data.subjects
       })
     }
-    
     getHotNewsData(type){
       const params = "?action=getnews&type=" + type + "&count=5"
       fetch(UrlConfig.getHotNewsData + params)
@@ -32,7 +30,6 @@ class CommonDataStore {
         this.HotNewsData = data
       })
     }
-   
    getHotNewsHotData(){
       const params = "?action=getnews&type=top&count=10"
       fetch(UrlConfig.getHotNewsData + params)
@@ -42,7 +39,6 @@ class CommonDataStore {
         this.HotNewsHotData = data
       })
     }
-    
     getHotMusicsData(){
       const params = "?method=baidu.ting.billboard.billList&type=2&size=8&offset=0"
       fetch(UrlConfig.getHotMusicsData + params)
@@ -56,8 +52,8 @@ class CommonDataStore {
         this.HotMusicsData = Newdata
       }) 
     }
-    
     getPopularMusicsData(){
+      
       const params = "?method=baidu.ting.billboard.billList&type=1&size=10&offset=0"
       fetch(UrlConfig.getHotMusicsData + params)
       .then((response)=> {
@@ -67,7 +63,6 @@ class CommonDataStore {
        
       })  
     }
-    
     getHotBooksData(){
       const params = "?q=" + "侦探" + "&start=0&count=9"
       fetch(UrlConfig.getHotBooksData + params)
@@ -77,7 +72,6 @@ class CommonDataStore {
          this.HotBooksData = data.books
       })  
     }
-    
     play(id,cb){
       const params = "?method=baidu.ting.song.playAAC&songid=" + id
       fetch(UrlConfig.getHotMusicsData + params)

@@ -4,7 +4,7 @@
   "description": "a react website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline --hot"
   },
   "author": "han chen",
   "license": "ISC",
@@ -22,10 +22,8 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "copy-webpack-plugin": "^4.1.1",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
-    "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "style-loader": "^0.18.2",
