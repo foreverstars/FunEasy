@@ -4,7 +4,7 @@
   "description": "a react website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline --hot"
   },
   "author": "han chen",
   "license": "ISC",
@@ -28,7 +28,9 @@
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "open-browser-webpack-plugin": "^0.0.5",
     "style-loader": "^0.18.2",
+    "uglify-es": "git://github.com/mishoo/UglifyJS2.git#harmony",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
