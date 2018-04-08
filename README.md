@@ -19,4 +19,7 @@
 —— —— package.json
 —— —— readme.md
 —— —— webpack.config.js
+
+
+// 测试git reset
 		
